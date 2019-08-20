@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="display">
+    <button onclick="check()">Check</button>
+    <script>
+    function check() {
+            let display = document.getElementById("display").value;
+            console.log(display);
+                checkRegexp(display);
+
+            function checkRegexp(value) {
+                let regexp = /^([0-2][0-9]|(3)[0-1])(\/)((0){0,1}[0-9])|((1)[0-2])(\/)[0-9]$/;
+              if(regexp.test(value)) {
+                  return alert("True");
+              }
+              return alert("False");
+            }
+        }
+    </script>
+</body>
+</html>

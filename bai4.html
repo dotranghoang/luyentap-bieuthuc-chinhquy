@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Password (8-16 character ,No character special) </h3>
+    <input type="password" value="" id="password" >
+    <button onclick="check()" >Check</button>
+    <script>
+    function check() {
+        let password = document.getElementById("password").value;
+        checkRegexp(password);
+
+        function checkRegexp(value) {
+            regexp = /^[A-Za-z0-9]{8,16}$/
+            if(regexp.test(value)) {
+                return alert("This password available")
+            }
+            return alert("This password unavailable")
+        }
+    }
+    
+    </script>
+</body>
+</html>
