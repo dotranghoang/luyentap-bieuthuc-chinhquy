@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write("<h3>Làm việc với đối tượng Date: </h3><br/>")
+
+        let myBirthday = new Date(1996, 06, 27);
+        let thisNow = new Date();
+        let myYearOldInHour = parseInt((thisNow.getTime() - myBirthday.getTime()) / (1000 * 3600));
+        let myYearOldInDays = parseInt((thisNow.getTime() - myBirthday.getTime()) / (24 * 3600 * 1000));
+        let myYearOldInWeeks = parseInt((thisNow.getTime() - myBirthday.getTime()) / (24 * 3600 * 1000 * 7));
+        let myYearOldInMonths = ((thisNow.getMonth() + 12 * thisNow.getFullYear()) - (myBirthday.getMonth() + 12 * myBirthday.getFullYear()));
+        let myYearOld = (thisNow.getFullYear() - myBirthday.getFullYear());
+        let myYearOldInMinute = parseInt((thisNow.getTime() - myBirthday.getTime()) / (1000 * 3600) * 60);
+        let myYearOldInSecond = parseInt((thisNow.getTime() - myBirthday.getTime()) / (1000 * 3600) * 60 * 60);
+        let myYearOldInMiliSecond = parseInt((thisNow.getTime() - myBirthday.getTime()) / (1000 * 3600) * 60 * 60 * 100);
+
+        document.write("Tôi đã sống : " + myYearOld + " năm");
+        document.write("<br/>Tôi đã sống : " + myYearOldInMonths + " tháng");
+        document.write("<br/>Tôi đã sống : " + myYearOldInWeeks + " tuần");
+        document.write("<br/>Tôi đã sống : " + myYearOldInDays + " ngày");
+        document.write("<br/>Tôi đã sống : " + myYearOldInHour + " giờ");
+        document.write("<br/>Tôi đã sống : " + myYearOldInMinute + " phút");
+        document.write("<br/>Tôi đã sống : " + myYearOldInSecond + " giây");
+        document.write("<br/>Tôi đã sống : " + myYearOldInMiliSecond + " miligiây");
+
+        document.write("<h3>Làm việc với đối tượng Math: </h3><br/>")
+
+        document.write("Sinh số ngẫu nhiên từ 0-10 : "+Math.floor(Math.random()*10));
+        document.write("<br/>Sinh số ngẫu nhiên từ 0-400 : "+ Math.floor(Math.random()*400));
+        document.write("<br/>Sinh số ngẫu nhiên từ 50-150 : "+ Math.floor(Math.random()*(150-50+1)+50 ));
+        document.write("<br/>Giá trị nhỏ nhất trong các số 5, 7, 2, 9 là : "+ Math.min(5,7,2,9));
+
+        document.write("<h3>Làm việc với đối tượng String: </h3><br/>")
+        let str = "Tôi yêu ngôn ngữ lập trình Javascript";
+        let count = 0;
+        let arr = [];
+        for(var i = 0 ; i < str.length ; i++) {
+            if (str[i] == "a") {
+                count++;
+            }
+        }
+        document.write("Số chữ a trong chuỗi: "+count);
+        for(var j = 0 ; j < str.length ; j++) {
+            if(str[j] != " ") {
+                arr.push(str[j]);
+            }
+        }
+        document.write("<br/>Các phần tử sau khi tạo thành mảng: "+arr.join(","));
+        document.write("<br/>"+str.replace("Javascript", "Typescript"));    
+    </script>
+</body>
+
+</html>
